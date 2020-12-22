@@ -65,7 +65,7 @@ public class ApplicationServlet extends HttpServlet {
                 req.setAttribute("error", "<div class='center red-text'>ПОЛЬЗОВАТЕЛЬ С ТАКИМ ИМЕНЕМ И ПАРОЛЕМ НЕ СУЩЕСТВУЕТ</div> </br>");
                 getServletContext().getRequestDispatcher("/auth.jsp").forward(req, resp);
             } catch (Exception e) {
-                req.setAttribute("error", "server error");
+                req.setAttribute("error", "<div class='center red-text'>ПОЛЬЗОВАТЕЛЬ С ТАКИМ ИМЕНЕМ УЖЕ СУЩЕСТВУЕТ</div> </br>");
                 getServletContext().getRequestDispatcher("/auth.jsp").forward(req, resp);
             }
         } else
@@ -96,7 +96,7 @@ public class ApplicationServlet extends HttpServlet {
                 throwables.printStackTrace();
             }
             resp.sendRedirect("/app");
-        }
+        } else
         if (req.getParameterMap().containsKey("log_out")) {
             session.invalidate();
             getServletContext().getRequestDispatcher("/auth.jsp").forward(req, resp);
