@@ -12,9 +12,9 @@ public class DbRoom {
         this.userName = userName;
     }
 
-    public String name;
-    public String userName;
-    public String id;
+    private String name;
+    private String userName;
+    private String id;
 
     public String getName() {
         return this.name;

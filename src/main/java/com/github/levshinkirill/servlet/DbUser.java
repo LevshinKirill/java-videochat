@@ -12,9 +12,9 @@ public class DbUser {
         this.password = password;
     }
 
-    public String name;
-    public String password;
-    public String id;
+    private String name;
+    private String password;
+    private String id;
 
     public String getName() {
         return this.name;
